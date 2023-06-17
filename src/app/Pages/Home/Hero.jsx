@@ -11,7 +11,7 @@ const Hero = () => {
                     <Navbar />
                 </div>
                 <div className="mb-4">
-                    <div className=""  >
+                    <div   >
                         <div className="text-myYellow align-bottom text-7xl font-extrabold text-center tracking-wide font-sans   ">
                             <p className="leading-snug" >
                                 Explore the new world

@@ -15,7 +15,8 @@ module.exports = {
       colors:{
         'heroblack':'#000814',
         'myYellow':'#FFD60A',
-        'recoveryBg':'#F2F2F2'
+        'recoveryBg':'#F2F2F2',
+        'keyTrendsText':'rgb(0, 53, 102)'
       }
     },
   },
