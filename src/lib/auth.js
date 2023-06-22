@@ -1,6 +1,6 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google"
-import LinkedInProvider  from "@mui/icons-material";"next-auth/providers/linkedin"
+import LinkedInProvider  from "next-auth/providers/linkedin"
 export const authOptions = {
     providers: [
         GoogleProvider({
