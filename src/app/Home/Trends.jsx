@@ -1,4 +1,4 @@
-import keyTrends from "../../../../public/images/KeyTrends.png"
+import keyTrends from "../../../public/images/KeyTrends.png"
 import Image from "next/image";
 
 const Trends = () => {
@@ -8,7 +8,7 @@ const Trends = () => {
 
             <div className="ml-40 mb-60" >
                 <div>
-                    <Image src={keyTrends} height={150} />
+                    <Image src={keyTrends} alt="keytrend" height={150} />
                 </div>
                 <div className="mt-4 flex ml-16 gap-32 ">
                     <div className="w-1/3" >

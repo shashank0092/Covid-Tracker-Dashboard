@@ -11,14 +11,23 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
-    "autoprefixer": "10.4.14",
+    "@next/font": "^13.4.6",
+    "chart.js": "^4.3.0",
     "framer-motion": "^10.12.16",
+    "moment": "^2.29.4",
     "next": "13.4.6",
+    "next-auth": "^4.22.1",
     "popmotion": "^11.0.5",
-    "postcss": "8.4.24",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2"
+    "recharts": "^2.7.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
   }
 }

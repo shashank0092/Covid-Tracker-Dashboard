@@ -1,8 +1,20 @@
+'use client'
 import Button from "@mui/material/Button"
-const ButtonBoi=({text,bgcolor,textcolor})=>{
+import Link from "next/link";
+
+
+
+const ButtonBoi=({text,bgcolor,textcolor,className,icon})=>{
     return(
         <>
-            <Button variant="contained" style={{backgroundColor:`${bgcolor}`,color:`${textcolor}` }} className="font-bold text- text-base font-sans normal-case" > {text} </Button>
+            <Button variant="contained" style={{backgroundColor:`${bgcolor}`,color:`${textcolor}` }} className={className} 
+            >
+                <Link href={
+                    text=='Sign Up'?'/Login':("")
+                }
+                    
+                 >{text}</Link>
+             </Button>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Impact1 from "../../../../public/images/Impact1.png"
-import Impact2 from "../../../../public/images/Impact2.png"
-import Impact3 from "../../../../public/images/Impact3.png"
+import Impact1 from "../../../public/images/Impact1.png"
+import Impact2 from "../../../public/images/Impact2.png"
+import Impact3 from "../../../public/images/Impact3.png"
 const Imapct = () => {
     return (
         <>
@@ -11,14 +11,14 @@ const Imapct = () => {
                 </div>
                 <div className="mt-14 flex flex-col justify-center items-center " >
                     <div>
-                        <Image src={Impact1} height={300} width={1050} />
+                        <Image src={Impact1} alt="impact1" height={300} width={1050} />
                     </div>
                     <div className="flex flex-row mt-3 gap-2" >
                         <div>
-                            <Image src={Impact2} height={435} />
+                            <Image src={Impact2}  alt="impact2" height={435} />
                         </div>
                         <div>
-                            <Image src={Impact3} height={425} />
+                            <Image src={Impact3} alt="impact3" height={425} />
                         </div>
                     </div>
                 </div>
