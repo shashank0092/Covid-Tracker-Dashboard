@@ -8,15 +8,15 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 const LoginSection = () => {
     return (
         <>
-            <div className="ml-40" >
+            <div className="ml-40 xsm:ml-4" >
                 <div>
                     <div className="w-3/4" >
-                        <p className="font-extrabold font-sans text-6xl leading-snug" >Get ready to Login with LIVELIFE</p>
-                        <p className="font-extrabold font-sans text-6xl" >Login!</p>
+                        <p className="font-extrabold font-sans text-6xl leading-snug xsm:text-2xl" >Get ready to Login with LIVELIFE</p>
+                        <p className="font-extrabold font-sans text-6xl xsm:text-lg" >Login!</p>
                     </div>
-                    <div className="mt-16 flex gap-7" >
+                    <div className="mt-16 flex gap-7 xsm:flex xsm:flex-col" >
                         {/* <ButtonBoi text={"Login with Google"} bgcolor={""} textcolor={"black"} className={'font-sans font-semibold rounded-none  ' }  icon={'google'} /> */}
-                        <Button variant="contained"  style={{backgroundColor:'#79addc',color:"black"}} className={'font-sans font-semibold rounded-none ' }  onClick={
+                        <Button variant="contained"   style={{backgroundColor:'#79addc',color:"black"}} className={'font-sans font-semibold rounded-none flex gap-5 xsm:w-full xsm:rounded-3xl xsm:py-5  ' }  onClick={
                             ()=>{
                                 console.log("shuklla boi")
                                 signIn("google")
@@ -25,7 +25,7 @@ const LoginSection = () => {
                             <GoogleIcon/> Login with Google
                         </Button>
                         {/* <ButtonBoi text={"Login with Linkedin"} bgcolor={"#ffc09f"} textcolor={"black"} className={'font-sans font-semibold rounded-none  '} icon={'linkedin'} /> */}
-                        <Button variant="contained"  style={{backgroundColor:'#ffc09f',color:"black"}} className={'font-sans font-semibold rounded-none ' }  onClick={
+                        <Button variant="contained"  style={{backgroundColor:'#ffc09f',color:"black"}} className={'font-sans font-semibold rounded-none flex gap-5 xsm:w-full xsm:rounded-3xl xsm:py-5 ' }  onClick={
                             ()=>{
                                 console.log("shuklla boi")
                                 signIn("linkedin")

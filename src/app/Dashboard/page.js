@@ -11,7 +11,7 @@ const Dashboard = () => {
             <Data />
             <RealTimeNews />
             <FAQS />
-            <div className="mt-20" >
+            <div className="mt-20 " >
                 <Footer/>
             </div>
         </>

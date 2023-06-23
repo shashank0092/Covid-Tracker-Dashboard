@@ -5,9 +5,9 @@ import Impact3 from "../../../public/images/Impact3.png"
 const Imapct = () => {
     return (
         <>
-            <div className="mb-44">
-                <div className="ml-64">
-                    <p className="font-sans font-bold text-5xl" >Impacts Visualized</p>
+            <div className="mb-44 xsm:border-l-4  xsm:mt-5 xsm:mb-0 ">
+                <div className="ml-64 xsm:ml-0">
+                    <p className="font-sans font-bold text-5xl xsm:text-3xl xsm:text-center " >Impacts Visualized</p>
                 </div>
                 <div className="mt-14 flex flex-col justify-center items-center " >
                     <div>

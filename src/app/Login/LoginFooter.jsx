@@ -10,7 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 const LoginFooter = () => {
     return (
         <>
-            <div className="flex flex-col justify-center items-center mb-32" >
+            <div className="flex flex-col justify-center items-center mb-32 xsm:mb-0" >
                 <div>
                     <Image src={LoginpageFooterImage} alt="loginfooter" height={250} />
                 </div>

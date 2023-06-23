@@ -1,4 +1,4 @@
-import NextAuth from "next-auth/next";
+
 import GoogleProvider from "next-auth/providers/google"
 import LinkedInProvider  from "next-auth/providers/linkedin"
 export const authOptions = {

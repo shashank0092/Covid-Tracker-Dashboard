@@ -43,7 +43,18 @@ module.exports = {
         
       },
       boxShadow:{
-       "modemBox":'10px 14px 2px 56px rgba(49,46,49,0.7)' 
+       "modemBox":'10px 14px 2px 56px rgba(49,46,49,0.7)',
+       "modemMobileBox":"10px 14px 2px 40px rgba(49,46,49,0.7)" 
+      },
+      screens:{
+        'xsm':{min:"200px",max:"500px"},
+        'msm':'300px',
+        'sm':'640px',
+        'md':'768px',
+        'lg':'1024px',
+        'xl':'1280px',
+        '2xl':'1536px'
+        
       }
      
     },
