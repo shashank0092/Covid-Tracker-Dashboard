@@ -4,7 +4,7 @@ import DBMain from "../../../public/images/DashboardHeadImage.png"
 const Hero=()=>{
     return(
         <>
-            <div className="h-[100vh] mt-20  xsm:mt-0  xsm:w-[98vw] xsm:m-0 xsm:border-t-4 xsm:border-r-4 xsm:h-[50vh]  "  >
+            <div className="h-[100vh] mt-20  xsm:mt-0  xsm:w-[98vw]  xsm:h-[50vh]  "  >
                 <div className="flex justify-center xsm: " >
                     <Image src={DBMain} alt="heroasectionimage" height={600} />
                 </div>

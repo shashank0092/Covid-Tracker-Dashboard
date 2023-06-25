@@ -11,7 +11,9 @@ export const authOptions = {
         LinkedInProvider({
             clientId:"771zxxwm05phw4",
             clientSecret:'aYV0s4tdHV1ZPIpF'
-        })
+        }),
+        
       ],
-      secret:"shukla"
+      secret:"shukla",
+      
 };
