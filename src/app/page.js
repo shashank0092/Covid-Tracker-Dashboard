@@ -3,13 +3,7 @@ import HomePage from "./Home/HomePage"
 const Home = () => {
   return (
     <>
-
-      
         <HomePage/>
-        
-      
-
-
     </>
   )
 }

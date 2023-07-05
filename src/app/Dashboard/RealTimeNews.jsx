@@ -6,7 +6,7 @@ import RT3 from "../../../public/images/DashboardRT3.png"
 const RealTimeNews = () => {
     return (
         <>
-            <div className="flex flex-col  justify-center items-center xsm:border-l-4 xsm:border-r-4" >
+            <div className="flex flex-col  justify-center items-center  " >
                 <div className="bg-recoveryBg p-8 rounded-3xl xsm:p-0  xsm:rounded-lg" >
                     <div className="xsm:text-center" >
                         <p className="text-dashboardBg font-extrabold text-3xl font-sans xsm:text-lg " >Real Time</p>

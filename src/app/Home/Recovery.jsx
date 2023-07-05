@@ -29,7 +29,7 @@ const Recovery = () => {
                     <RecoveryTab headingText={"Travel Reboot"} lightText={"Rediscovering Adventures"} image={RecoveryImage1} />
                     <RecoveryTab headingText={"Innovation Surge"} lightText={"Tech-Powered Future"} image={RecoveryImage1} />
                 </div>
-                <div className="flex mt-32 ml-9 justify-betweenx xsm:mt-6 xsm:ml-0">
+                <div className="flex mt-32 ml-9 justify-between xsm:mt-6 xsm:ml-0">
                     <div >
                         <Image src={RI1} alt="rt1"  height={90} />
                     </div>

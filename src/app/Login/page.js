@@ -1,16 +1,19 @@
+
+import Footer from "../components/Footer";
 import Hero from "./Hero";
 import LoginFooter from "./LoginFooter";
 import LoginReason from "./LoginReason";
-import LoginSection from "./LoginSection";
+import GoogleLoginSection from "./GoogleLoginSection";
+
 
 
 const Login=()=>{
     return(
         <>
             <Hero/>
-            <LoginSection/>
+            <GoogleLoginSection/>
             <LoginReason/>
-            <LoginFooter/>
+            <Footer/>            
         </>
     )
 }

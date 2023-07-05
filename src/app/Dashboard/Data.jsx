@@ -15,18 +15,18 @@ const Data = () => {
 
             <div className="xsm:mt-5">
                 <div className="flex justify-around gap-60 p-28   bg-dashboardBg xsm:p-0 xsm:gap-2 xsm:w-full xsm:flex xsm:flex-col xsm:py-5 " >
-                    <div className="ml-32 xsm:ml-0">
+                    <div className="ml-32 xsm:ml-4">
                         <p className="font-bold tracking-wide text-5xl text-white font-sans w-80 xsm:text-lg" >
                             Unveiling the COVID Data Universe
                         </p>
                     </div>
-                    <div className=" text-white xsm:mt-0" >
+                    <div className=" text-white xsm:mt-0 xsm:ml-4" >
                         <p className=" font-sans font-normal text-xl xsm:text-sm xsm:mt-0  " >
                             Dive into the world of COVID-19, armed with insightful visualizations, powerful search options and the latest statistics – all at your fingertips.
                         </p>
                     </div>
                 </div>
-                <div className="mt-40 mb-28 xsm:mt-5">
+                <div className="mt-40 mb-28 xsm:mt-5 xsm:ml-4">
                     <div className={inputBar==false?("flex flex-col gap-7 justify-center items-center xsm:items-start "):("")}  >
                         <div>
                             <p className="font-sans font-bold text-6xl text-dashboardBg text-center xsm:text-3xl" >Search & Visualize</p>
@@ -35,8 +35,8 @@ const Data = () => {
                         {
                             inputBar == true ? (
                                 <>
-                                    <div >
-                                        <Input inputBar={inputBar} setInputBar={setInputBar} />
+                                    <div  >
+                                        <Input inputBar={inputBar} setInputBar={setInputBar} death={"death"} news={null} />
                                     </div>
                                    
                                 </>
@@ -52,7 +52,7 @@ const Data = () => {
 
                                                 onClick={() => { setInputBar(true) }}  >
                                                 Find Data </Button>
-                                            <ButtonBoi bgcolor={'#14213d'} textcolor={'white'} text={'Learn More'} />
+                                            <ButtonBoi bgcolor={'#14213d'} textcolor={'white'} text={'Recent News'} />
 
                                         </div>
                                     </div>

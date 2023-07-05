@@ -1,4 +1,4 @@
-const resultOfSearch = async (countryName) => {
+const resultOfDeathSearch = async (countryName) => {
     const url = `https://coronavirus-smartable.p.rapidapi.com/stats/v1/${countryName}/`;
     const options = {
         method: 'GET',
@@ -19,5 +19,5 @@ const resultOfSearch = async (countryName) => {
 }
 
 module.exports={
-    resultOfSearch
+    resultOfDeathSearch
 }

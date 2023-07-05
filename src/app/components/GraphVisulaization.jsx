@@ -10,9 +10,9 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 
-const Graph = ({ resultValue, setResultValue }) => {
-    console.log(resultValue, setResultValue, "graph vala console")
-    const date=String(resultValue?.updatedDateTime).split("T");
+const Graph = ({ DeathResultValue, setDeathResultValue }) => {
+    console.log(DeathResultValue, setDeathResultValue, "graph vala console")
+    const date=String(DeathResultValue?.updatedDateTime).split("T");
     
     const data = {
 
@@ -21,12 +21,12 @@ const Graph = ({ resultValue, setResultValue }) => {
                 label: 'No Of Patients ',
                 data:
                     [
-                        resultValue?.stats?.newDeaths,
-                        resultValue?.stats?.newlyConfirmedCases,
-                        resultValue?.stats?.newlyRecoveredCases,
-                        resultValue?.stats?.totalConfirmedCases,
-                        resultValue?.stats?.totalDeaths,
-                        resultValue?.stats?.totalRecoveredCases,
+                        DeathResultValue?.stats?.newDeaths,
+                        DeathResultValue?.stats?.newlyConfirmedCases,
+                        DeathResultValue?.stats?.newlyRecoveredCases,
+                        DeathResultValue?.stats?.totalConfirmedCases,
+                        DeathResultValue?.stats?.totalDeaths,
+                        DeathResultValue?.stats?.totalRecoveredCases,
 
 
 
@@ -58,20 +58,20 @@ const Graph = ({ resultValue, setResultValue }) => {
             <div className='flex flex-col gap-5 ml-5 xsm:ml-0 ' >
                 <div className='flex items-center mt-2 '  >
                     <div className='w-1/3 xsm:w-1/6 '>
-                        <IconButton onClick={() => { setResultValue("") }} >
+                        <IconButton onClick={() => { setDeathResultValue("") }} >
                             <WestIcon className='text-lg' />
                         </IconButton>
                     </div>
 
                     <div >
-                        <p className='text-center font-sans font-bold font text-xl xsm:text-sm ' >Graph Visuliaztion of COVID-19 IN {resultValue?.location?.countryOrRegion}</p>
+                        <p className='text-center font-sans font-bold font text-xl xsm:text-sm ' >Graph Visuliaztion of COVID-19 IN {DeathResultValue?.location?.countryOrRegion}</p>
                     </div>
 
                 </div>
                 <div className='flex justify-around  mt-5 xsm:flex xsm:flex-col ' >
                     <div className='xsm:flex xsm:flex-col xsm:justify-center xsm:items-center' >
                         <div  >
-                            <p className='text-left font-semibold xsm:text-sm ' >Covid-19 Graph in {resultValue?.location?.countryOrRegion}:</p>
+                            <p className='text-left font-semibold xsm:text-sm ' >Covid-19 Graph in {DeathResultValue?.location?.countryOrRegion}:</p>
                         </div>
                         <div className='mt-5   ' >
                             <Pie data={data} className='xsm:h-[158px] xsm:w-[157px]' />
@@ -88,22 +88,22 @@ const Graph = ({ resultValue, setResultValue }) => {
                         </div>
                         <div className='ml-16 mt-3  '  >
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-loose'>
-                                New Deaths:{resultValue?.stats?.newDeaths}
+                                New Deaths:{DeathResultValue?.stats?.newDeaths}
                             </p>
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-relaxed'>
-                                New Confirmed Cases:{resultValue?.stats?.newlyConfirmedCases}
+                                New Confirmed Cases:{DeathResultValue?.stats?.newlyConfirmedCases}
                             </p>
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-relaxed'>
-                                New Recover Cases:{resultValue?.stats?.newlyRecoveredCases}
+                                New Recover Cases:{DeathResultValue?.stats?.newlyRecoveredCases}
                             </p>
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-relaxed'>
-                                Total Confirmed Cases:{resultValue?.stats?.totalConfirmedCases}
+                                Total Confirmed Cases:{DeathResultValue?.stats?.totalConfirmedCases}
                             </p>
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-relaxed'>
-                                Total Deaths:{resultValue?.stats?.totalDeaths}
+                                Total Deaths:{DeathResultValue?.stats?.totalDeaths}
                             </p>
                             <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:tracking-wide xsm:leading-relaxed'>
-                                Total Recoverd Cases:{resultValue?.stats?.totalRecoveredCases}
+                                Total Recoverd Cases:{DeathResultValue?.stats?.totalRecoveredCases}
                             </p>
                         </div>
                         <div className='mt-7' >
@@ -113,10 +113,10 @@ const Graph = ({ resultValue, setResultValue }) => {
                                 </p>
                             </div>
                             <div className='ml-16 mt-3 '   >
-                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>Country Name:{resultValue?.location?.countryOrRegion}</p>
-                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>isoCode of Country:{resultValue?.location?.isoCode}</p>
-                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>Latitude:{resultValue?.location?.lat}</p>
-                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed' >Longitude:{resultValue?.location?.long}</p>
+                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>Country Name:{DeathResultValue?.location?.countryOrRegion}</p>
+                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>isoCode of Country:{DeathResultValue?.location?.isoCode}</p>
+                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed'>Latitude:{DeathResultValue?.location?.lat}</p>
+                                    <p className='font-sans font-medium text-lg tracking-wide leading-10 xsm:text-sm xsm:leading-relaxed' >Longitude:{DeathResultValue?.location?.long}</p>
                             </div>
                         </div>
                         <div className='mt-7' >
