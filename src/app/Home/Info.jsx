@@ -1,14 +1,14 @@
 'use client'
 import Image from "next/image"
 import Blood from "../../../public/images/Blood.png"
-import { useGlobalContext } from "@/context/Store";
+
 import Link from "next/link"
 import { Button } from "@mui/material"
 
 
 const Info = () => {
-    const{loginType,setLoginType}=useGlobalContext();
-    console.log(loginType,"this is login type")
+    
+    
     return (
         <>
 

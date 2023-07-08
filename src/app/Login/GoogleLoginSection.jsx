@@ -12,10 +12,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Link from "next/link";
-import { FaWallet } from "react-icons/fa"
+
 import { useGlobalContext } from "@/context/Store";
-import { connectWallet, getContract } from "../components/Web3features"
-import { ContractABI, ContractAddress } from "@/lib/smartcontract";
+
 
 
 
