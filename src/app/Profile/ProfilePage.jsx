@@ -38,27 +38,25 @@ const validationSchema = yup.object({
 
 const ProfilePage = () => {
     const [sideBar, setSideBar] = useState(false);
-    const {userDetails,setUserDetails,loginType,contract,walletAdress}=useGlobalContext();
+    const {userDetails,setUserDetails}=useGlobalContext();
     console.log(userDetails,"this is global value")
 
-    console.log("THIS IS LOGIN TYPE ON FORM",loginType)
-    console.log("THIS IS SMART CONTRACT ON FROM",contract);
-    console.log("THIS IS USERS WALLET ADDRESS",walletAdress)
+    
     
 
 
     const formik = useFormik(
         {
             initialValues: {
-                name: loginType=="Web2.0"?(userDetails.name):(""),
-                email: loginType=="Web2.0"?(userDetails.email):(""),
+                name: userDetails.name,
+                email: userDetails.email,
                 phoneNumber:"",
                 age: "",
                 dob: "",
                 issue: false
             },
             onSubmit: async (values) => {
-                const Web2Submit=async()=>{
+                
                     try {
                         const saveDetails=await fetch("api/fulldetails",{
                             method:"POST",
@@ -73,20 +71,9 @@ const ProfilePage = () => {
                     catch (err) {
                         console.log(err)
                     }
-                }
+                
 
-                const Web3Submit=async()=>{
-                    try{
-                        console.log("Running inside00")
-                       const storeUserDetails=await contract.methods.StoreDeatails(walletAdress,values.name,values.age,values.dob,values.issue).call();
-                       console.log("THIS IS RESULT",storeUserDetails)
-                    }   
-                    catch(err){
-                        console.log(err);
-                    }
-                }
-
-                loginType=="Web2.0"?(Web2Submit()):(Web3Submit())
+              
             },
             // validationSchema:validationSchema
         },)
