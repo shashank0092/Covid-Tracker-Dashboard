@@ -16,7 +16,7 @@ import { FaWallet } from "react-icons/fa"
 import { useGlobalContext } from "@/context/Store";
 import { connectWallet, getContract } from "../components/Web3features"
 import { ContractABI, ContractAddress } from "@/lib/smartcontract";
-import { Web3 } from "Web3"
+
 
 
 const GoogleLoginSection = () => {
