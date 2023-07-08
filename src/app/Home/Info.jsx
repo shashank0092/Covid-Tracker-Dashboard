@@ -1,10 +1,14 @@
 'use client'
 import Image from "next/image"
 import Blood from "../../../public/images/Blood.png"
-import ButtonBoi from "@/app/components/Button"
+import { useGlobalContext } from "@/context/Store";
+import Link from "next/link"
+import { Button } from "@mui/material"
 
 
 const Info = () => {
+    const{loginType,setLoginType}=useGlobalContext();
+    console.log(loginType,"this is login type")
     return (
         <>
 
@@ -24,11 +28,21 @@ const Info = () => {
                         </p>
                     </div>
                     <div className="flex gap-5 mt-5" >
+                       
+
                         <div>
-                            <ButtonBoi bgcolor={'orange'} textcolor={'black'} text={"Sign Up"} className={"font-bold text- text-base font-sans normal-case"} use={'navigate'} />
+                            <Link href="/Login"  >
+                                <Button variant="contained"  style={{ backgroundColor: "orange", color: "black" }} className={"font-bold text- text-base font-sans normal-case"}>
+                                    Google Login
+                                </Button>
+                            </Link>
                         </div>
                         <div>
-                            <ButtonBoi bgcolor={'black'} textcolor={'orange'} text={"Read More"}  className={"font-bold text- text-base font-sans normal-case"} use={'naviagate'} />
+                        <Link href="/Login"  >
+                                <Button variant="contained"  style={{ backgroundColor: "black", color: "orange" }} className={"font-bold text- text-base font-sans normal-case"}>
+                                    Read News
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

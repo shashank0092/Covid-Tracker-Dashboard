@@ -6,7 +6,7 @@ const Greeting = () => {
         <>
             <div className="flex flex-col justify-center items-center mt-10 xsm:mt-0" >
                 <div className="xsm:w-1/2" >
-                    <Image src={Image2} />
+                    <Image src={Image2} alt="image1" />
                 </div>
                 <div className="flex justify-center items-center gap-40 xsm:gap-5 xsm:flex-col " >
                     <div>

@@ -4,18 +4,40 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from "@mui/material/Tooltip"
 
 
-const Avtar = ({ image, name, email }) => {
-    const { userDetails } = useGlobalContext();
+const Avtar = () => {
+    const { userDetails, loginType, walletAdress } = useGlobalContext();
     console.log(userDetails)
+
+
+
+
+    
     return (
         <>
-            <div className=' ' >
-                <Tooltip title={`${userDetails.name}`} arrow >
-                    <IconButton size='small' className='w-5 h-5' >
-                        <Avatar sx={{ bgcolor: 'skyblue' }} alt={name} src={userDetails.imageUrl} />
-                    </IconButton>
-                </Tooltip>
-            </div>
+            {
+                loginType == "Web2.0" ? (
+                    <>
+                        <div  >
+                            <Tooltip title={`${userDetails.name}`} arrow >
+                                <IconButton size='small' className='w-5 h-5' >
+                                    <Avatar sx={{ bgcolor: 'skyblue' }} alt={userDetails.name} src={userDetails.imageUrl} />
+                                </IconButton>
+                            </Tooltip>
+                        </div>
+                    </>
+                ) :
+                    (
+                        <>
+                            <div className=' ' >
+                                <Tooltip title={`${walletAdress}`} arrow >
+                                    <IconButton size='small' className='w-5 h-5' >
+                                        <Avatar sx={{ bgcolor: 'skyblue' }} alt={"user"} src={userDetails.imageUrl} />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+                        </>
+                    )
+            }
         </>
     )
 }

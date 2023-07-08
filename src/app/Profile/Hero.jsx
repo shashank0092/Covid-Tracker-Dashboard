@@ -33,7 +33,7 @@ const Hero = () => {
                 </div>
 
                 <div className="xsm:w-1/2" >
-                    <Image src={Image1} height={500} />
+                    <Image src={Image1} height={500} alt="image1" />
                 </div>
             </div>
         </>

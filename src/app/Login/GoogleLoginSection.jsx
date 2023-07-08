@@ -5,31 +5,30 @@ import { toast } from "react-toastify";
 import { signIn } from 'next-auth/react'
 import { signOut } from "next-auth/react"
 import GoogleIcon from '@mui/icons-material/Google'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import { createContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useRouter } from "next/navigation"
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Link from "next/link";
-
-import Avtar from "../components/Avtar";
+import { FaWallet } from "react-icons/fa"
 import { useGlobalContext } from "@/context/Store";
-
-
+import { connectWallet, getContract } from "../components/Web3features"
+import { ContractABI, ContractAddress } from "@/lib/smartcontract";
+import { Web3 } from "Web3"
 
 
 const GoogleLoginSection = () => {
     const [googleLoading, setGoogleLoading] = useState(false);
-    const [linkedinLoading, setLinkedinLoading] = useState(false);
     const [userData, setUserData] = useState(null);
-    const {userDetails,setUserDetails}=useGlobalContext();
+    const { userDetails, setUserDetails, loginType} = useGlobalContext();
     const [login, setLogin] = useState(false);
-    const router = useRouter()
+
 
     const { data } = useSession();
-    console.log(data);
+
+
 
     useEffect(() => {
 
@@ -38,15 +37,15 @@ const GoogleLoginSection = () => {
             setLogin(true)
         )
 
-        login == false ? (<></>) : (userLoginDetails(data.user.name, data.user.email,data.user.image))
+        login == false ? (<></>) : (userLoginDetails(data.user.name, data.user.email, data.user.image))
     }, [data])
-
-    const userLoginDetails = async (name, email,imageUrl) => {
+    console.log(data)
+    const userLoginDetails = async (name, email, imageUrl) => {
         console.log("sending request to backend");
         const newUser = {
             name: name,
             email: email,
-            imageUrl:imageUrl
+            imageUrl: imageUrl
         }
 
         const data = await fetch("api/users", {
@@ -56,17 +55,13 @@ const GoogleLoginSection = () => {
         })
 
         const data2 = await data.json();
-        const details=await data2?.data
+        const details = await data2?.data
         setUserDetails(details);
-        console.log("Change value")
-        console.log(details,"this is global value")
         toast(`${data2?.message}`, { hideProgressBar: true, autoClose: 2000, type: 'success' })
     }
 
 
-  
-    console.log(userDetails,"this is details")
-    console.log(setUserDetails,"this is changing function")
+
 
 
 
@@ -74,10 +69,14 @@ const GoogleLoginSection = () => {
     return (
         <>
             <div className="ml-40 xsm:ml-4" >
-                {/* <Avtar name={data?.user?.name} email={data?.user?.email} image={data?.user?.image} /> */}
+
                 <div>
                     <div className="w-3/4" >
-                        <p className="font-extrabold font-sans text-6xl leading-snug xsm:text-2xl" >Get ready to Login with LIVELIFE</p>
+                        <p className="font-extrabold font-sans text-6xl leading-snug xsm:text-2xl" >
+                            {
+                                `Get ready to Login with GOOGLE on  LIVELIFE`
+                            }
+                        </p>
                         <p className="font-extrabold font-sans text-6xl xsm:text-lg" >Login!</p>
                     </div>
 
@@ -95,6 +94,10 @@ const GoogleLoginSection = () => {
                             theme="dark"
                         />
 
+
+
+
+
                         {
                             data?.user?.name == null ? (
                                 <>
@@ -104,8 +107,7 @@ const GoogleLoginSection = () => {
                                                 e.preventDefault();
                                                 setGoogleLoading(true)
                                                 await signIn("google")
-                                                // data == "" ? (<></>) : (setUserData(data))
-                                                // console.log(data?.user?.name,"THIS IS AFTERCAL");
+
                                                 // data?.user?.name==null?(<></>):(toast(`Welocme ${data?.user?.name}`, { hideProgressBar: true, autoClose: 2000, type: 'success' }))
 
 
@@ -116,19 +118,7 @@ const GoogleLoginSection = () => {
                                         }
                                     </LoadingButton>
 
-                                    {/* <LoadingButton variant="contained" loading={linkedinLoading} type="button"
-                                        loadingIndicator="Loading…" style={{ backgroundColor: '#ffc09f', color: "black" }} className={'font-sans font-semibold rounded-none flex gap-5 xsm:w-full xsm:rounded-3xl xsm:py-3 xsm:font-bold '} onClick={
-                                            () => {
 
-                                                setLinkedinLoading(true)
-                                                signIn("linkedin")
-                                                setUserData(data);
-                                            }
-                                        } >
-                                        {
-                                            linkedinLoading == true ? (<> <span>Loading...</span> </>) : (<><LinkedInIcon /> Login With Linkedin</>)
-                                        }
-                                    </LoadingButton> */}
                                 </>
                             ) : (
                                 <>
@@ -158,6 +148,15 @@ const GoogleLoginSection = () => {
                                 </>
                             )
                         }
+
+
+
+
+
+
+
+
+
 
 
 

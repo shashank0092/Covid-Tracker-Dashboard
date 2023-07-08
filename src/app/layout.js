@@ -2,8 +2,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { NextAuthProvider } from './provider';
-import { store } from '@/redux/store';
-import { Provider as ReduxProvider } from 'react-redux';
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { GlobalContextProvider } from '@/context/Store';
 
